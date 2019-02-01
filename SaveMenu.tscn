@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://SaveMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Imagen/Menu/MainMenu.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Fonts/computer_pixel-7.ttf" type="DynamicFontData" id=3]
 
@@ -12,7 +12,15 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="MainMenu" type="Control"]
+[sub_resource type="DynamicFont" id=2]
+
+size = 60
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 3 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="SaveMenu" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -34,8 +42,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 1280.0
-margin_bottom = 729.0
+margin_right = 40.0
+margin_bottom = 40.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -45,16 +53,16 @@ size_flags_vertical = 1
 texture = ExtResource( 2 )
 stretch_mode = 0
 
-[node name="ButtonNewGame" type="Button" parent="." index="1"]
+[node name="ButtonBack" type="Button" parent="." index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 461.0
-margin_top = 227.0
-margin_right = 851.0
-margin_bottom = 353.0
+margin_left = 520.0
+margin_top = 590.0
+margin_right = 752.0
+margin_bottom = 716.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -68,21 +76,21 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "New Game"
+text = "Back"
 flat = true
 align = 1
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
-[node name="ButtonContinue" type="Button" parent="." index="2"]
+[node name="ButtonSlot1" type="Button" parent="." index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 485.0
-margin_top = 330.0
-margin_right = 827.0
-margin_bottom = 456.0
+margin_left = 184.0
+margin_top = 462.0
+margin_right = 448.0
+margin_bottom = 588.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -96,21 +104,49 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Continue"
+text = "Slot 1"
 flat = true
 align = 1
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
-[node name="ButtonExit" type="Button" parent="." index="3"]
+[node name="Save1" type="Label" parent="ButtonSlot1" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 475.0
-margin_top = 440.0
-margin_right = 814.0
-margin_bottom = 566.0
+margin_left = -23.0
+margin_top = -369.0
+margin_right = 316.0
+margin_bottom = 606.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Name: Empty
+Life: Empty
+Bombs: Empty
+Keys: Empty
+Room: Empty
+Treasure: Empty"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="ButtonSlot2" type="Button" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 834.0
+margin_top = 463.0
+margin_right = 1104.0
+margin_bottom = 589.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -124,17 +160,43 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Exit"
+text = "Slot 2"
 flat = true
 align = 1
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
-[connection signal="pressed" from="ButtonNewGame" to="." method="_on_Button3_pressed"]
+[node name="Save2" type="Label" parent="ButtonSlot2" index="0"]
 
-[connection signal="pressed" from="ButtonNewGame" to="." method="_on_ButtonNewGame_pressed"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -27.0
+margin_top = -360.0
+margin_right = 312.0
+margin_bottom = 615.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Name: Empty
+Life: Empty
+Bombs: Empty
+Keys: Empty
+Room: Empty
+Treasure: Empty"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
-[connection signal="pressed" from="ButtonContinue" to="." method="_on_ButtonContinue_pressed"]
+[connection signal="pressed" from="ButtonBack" to="." method="_on_ButtonBack_pressed"]
 
-[connection signal="pressed" from="ButtonExit" to="." method="_on_ButtonExit_pressed"]
+[connection signal="pressed" from="ButtonSlot1" to="." method="_on_ButtonSlot1_pressed"]
+
+[connection signal="pressed" from="ButtonSlot2" to="." method="_on_ButtonSlot2_pressed"]
 
 
