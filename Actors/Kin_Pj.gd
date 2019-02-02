@@ -6,8 +6,14 @@ var speed = 250
 var distance = Vector2()
 var velocity = Vector2()
 
-func _ready():
+var inventario = ["vacio", "vacio", "vacio", "vacio"]
+var vida
+var bombs
 
+func _ready():
+	inventario = get_node("/root/global").inventario
+	vida = get_node("/root/global").vida
+	bombs = get_node("/root/global").bombs
 	pass
 
 func _physics_process(delta):
@@ -50,5 +56,26 @@ func _actualizarAnimaciones(direction):
 	if direction.y > 0:
 		$Ani_Pj.animation = "WalkDown"
 	
-
+func get_item(item):
+	var slotVacio = null
 	
+	for i in range(4):
+		if(inventario[i] == "vacio"):
+			slotVacio = i
+			
+	if(slotVacio == null):
+		return false
+	
+	if(item == "Vida" && vida < 3):
+		vida += 1
+		return true
+
+	if(item == "Bomba" && bombs < 5):
+		if(bombs == 0):
+			inventario[slotVacio] = "Bomba"
+		bombs += 1
+		return true
+	
+	if(item != "Vida" && item != "Bomba"):
+		inventario[slotVacio] = item
+		return true

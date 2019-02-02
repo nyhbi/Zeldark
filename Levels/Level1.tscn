@@ -1,14 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Levels/Level1.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Imagen/Backgrounds/level1.png" type="Texture" id=2]
-[ext_resource path="res://Assets/TileSet.tres" type="TileSet" id=3]
-[ext_resource path="res://Actors/Player.tscn" type="PackedScene" id=4]
-
-[sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
-extents = Vector2( 10, 9.99072 )
+[ext_resource path="res://Assets/TileSetFinal.tres" type="TileSet" id=3]
+[ext_resource path="res://Assets/Items.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Exit.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Actors/Kin_Pj.tscn" type="PackedScene" id=6]
 
 [node name="Level1" type="Node2D" index="0"]
 
@@ -40,41 +37,41 @@ collision_layer = 0
 collision_mask = 31
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 6, 2, 0, 7, 2, 0, 8, 2, 0, 9, 2, 0, 10, 2, 0, 11, 2, 0, 12, 2, 0, 13, 2, 0, 14, 2, 0, 15, 2, 0, 16, 2, 0, 17, 2, 0, 18, 2, 0, 19, 2, 0, 65536, 2, 0, 65555, 2, 0, 131072, 2, 0, 131091, 2, 0, 196608, 2, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 196622, 0, 0, 196623, 0, 0, 196624, 0, 0, 196627, 2, 0, 262144, 2, 0, 262151, 0, 0, 262163, 2, 0, 327680, 2, 0, 327687, 0, 0, 327699, 2, 0, 393216, 2, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393223, 0, 0, 393235, 2, 0, 458752, 2, 0, 458759, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458768, 0, 0, 458769, 0, 0, 458770, 0, 0, 458771, 2, 0, 524288, 2, 0, 524295, 0, 0, 589824, 2, 0, 589831, 0, 0, 655360, 2, 0, 655361, 2, 0, 655362, 2, 0, 655363, 2, 0, 655364, 2, 0, 655365, 2, 0, 655366, 2, 0, 655367, 2, 0, 655368, 2, 0, 655369, 2, 0, 655370, 2, 0, 655371, 2, 0, 655372, 2, 0, 655373, 2, 0, 655374, 2, 0, 655375, 2, 0, 655376, 2, 0, 655377, 2, 0, 655378, 2, 0, 655379, 2, 0 )
+tile_data = PoolIntArray( 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 6, 2, 0, 7, 2, 0, 8, 2, 0, 9, 2, 0, 10, 2, 0, 11, 2, 0, 12, 2, 0, 13, 2, 0, 14, 2, 0, 15, 2, 0, 16, 2, 0, 17, 2, 0, 18, 2, 0, 19, 2, 0, 65536, 2, 0, 65555, 2, 0, 131072, 2, 0, 131091, 2, 0, 196608, 2, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 196622, 0, 0, 196623, 0, 0, 196624, 0, 0, 196627, 2, 0, 262144, 2, 0, 262150, 0, 0, 262163, 2, 0, 327680, 2, 0, 327686, 0, 0, 327699, 2, 0, 393216, 2, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393222, 0, 0, 393235, 2, 0, 458752, 2, 0, 458758, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458768, 0, 0, 458769, 0, 0, 458770, 0, 0, 458771, 2, 0, 524288, 2, 0, 524294, 0, 0, 589824, 2, 0, 589830, 0, 0, 655360, 2, 0, 655361, 2, 0, 655362, 2, 0, 655363, 2, 0, 655364, 2, 0, 655365, 2, 0, 655366, 2, 0, 655367, 2, 0, 655368, 2, 0, 655369, 2, 0, 655370, 2, 0, 655371, 2, 0, 655372, 2, 0, 655373, 2, 0, 655374, 2, 0, 655375, 2, 0, 655376, 2, 0, 655377, 2, 0, 655378, 2, 0, 655379, 2, 0 )
 _sections_unfolded = [ "Cell", "Collision" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Player" parent="." index="2" instance=ExtResource( 4 )]
+[node name="Items" type="Node2D" parent="." index="2"]
 
-position = Vector2( 128, 576 )
+[node name="Bomba" parent="Items" index="0" instance=ExtResource( 4 )]
 
-[node name="Exit" type="Area2D" parent="." index="3"]
+position = Vector2( 96.5694, 480.311 )
+item = "Bomba"
 
-position = Vector2( 1408, 640 )
-scale = Vector2( 2, 4 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-collision_layer = 129
-collision_mask = 3
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Collision" ]
-__meta__ = {
-"_edit_group_": true
-}
+[node name="Bomba2" parent="Items" index="1" instance=ExtResource( 4 )]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" index="0"]
+position = Vector2( 161.055, 481.046 )
+item = "Bomba"
 
-position = Vector2( 1.90735e-06, 5.72205e-06 )
-scale = Vector2( 4.92308, 4.92659 )
-shape = SubResource( 1 )
-_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
+[node name="Bomba3" parent="Items" index="2" instance=ExtResource( 4 )]
 
-[connection signal="area_entered" from="Exit" to="." method="_on_Exit_area_entered"]
+position = Vector2( 225.743, 480.311 )
+item = "Bomba"
+
+[node name="Vida" parent="Items" index="3" instance=ExtResource( 4 )]
+
+position = Vector2( 480.933, 607.413 )
+
+[node name="Vida2" parent="Items" index="4" instance=ExtResource( 4 )]
+
+position = Vector2( 545.314, 607.413 )
+
+[node name="Exit" parent="." index="3" instance=ExtResource( 5 )]
+
+[node name="Kin_Pj" parent="." index="4" instance=ExtResource( 6 )]
+
+position = Vector2( 256, 576 )
 
 
