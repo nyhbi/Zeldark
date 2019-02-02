@@ -19,6 +19,25 @@ config/icon="res://icon.png"
 window/size/width=1280
 window/size/height=720
 
+[layer_names]
+
+2d_render/layer_1="all"
+2d_physics/layer_1="all"
+2d_render/layer_2="Player"
+2d_physics/layer_2="Player"
+2d_render/layer_3="Enemy"
+2d_physics/layer_3="Enemy"
+2d_render/layer_4="Bullets"
+2d_physics/layer_4="Bullets"
+2d_render/layer_5="Walls"
+2d_physics/layer_5="Walls"
+2d_render/layer_6="Bombs"
+2d_physics/layer_6="Bombs"
+2d_render/layer_7="Items"
+2d_physics/layer_7="Items"
+2d_render/layer_8="Doors"
+2d_physics/layer_8="Doors"
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"

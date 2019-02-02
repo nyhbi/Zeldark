@@ -17,7 +17,7 @@ func _ready():
 
 
 func _on_ButtonNewGame_pressed():
-	get_tree().change_scene("res://Level1.tscn")
+	get_tree().change_scene("res://Levels/Level1.tscn")
 
 
 func _on_ButtonContinue_pressed():
