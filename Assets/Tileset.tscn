@@ -14,7 +14,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 31.8986, 31.6632 )
 
-[node name="Tileset" type="Node2D"]
+[node name="Tileset" type="Node2D" index="0"]
 
 [node name="Wall1" type="Sprite" parent="." index="0"]
 
@@ -22,33 +22,22 @@ texture = ExtResource( 1 )
 centered = false
 _sections_unfolded = [ "Offset" ]
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
 
-[node name="RigidBody2D" type="RigidBody2D" parent="Wall1" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Wall1" index="0"]
 
 position = Vector2( 31.8688, 32.1312 )
 input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 0
-mass = 1.0
+collision_layer = 17
+collision_mask = 15
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
+_sections_unfolded = [ "Collision" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall1/RigidBody2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall1/StaticBody2D" index="0"]
 
 shape = SubResource( 1 )
 
@@ -59,33 +48,22 @@ texture = ExtResource( 2 )
 centered = false
 _sections_unfolded = [ "Offset" ]
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
 
-[node name="RigidBody2D" type="RigidBody2D" parent="Wall2" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Wall2" index="0"]
 
 position = Vector2( 31.8688, 32.1312 )
 input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 0
-mass = 1.0
+collision_layer = 17
+collision_mask = 31
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
+_sections_unfolded = [ "Collision" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2/RigidBody2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2/StaticBody2D" index="0"]
 
 shape = SubResource( 1 )
 
@@ -96,33 +74,22 @@ texture = ExtResource( 3 )
 centered = false
 _sections_unfolded = [ "Offset" ]
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
 
-[node name="RigidBody2D" type="RigidBody2D" parent="Wall3" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Wall3" index="0"]
 
 position = Vector2( 31.8688, 32.1312 )
 input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 0
-mass = 1.0
+collision_layer = 17
+collision_mask = 31
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
+_sections_unfolded = [ "Collision" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall3/RigidBody2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall3/StaticBody2D" index="0"]
 
 shape = SubResource( 1 )
 
@@ -133,33 +100,21 @@ texture = ExtResource( 4 )
 centered = false
 _sections_unfolded = [ "Offset" ]
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
 
-[node name="RigidBody2D" type="RigidBody2D" parent="Wall4" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Wall4" index="0"]
 
 position = Vector2( 31.8688, 32.1312 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
-mode = 0
-mass = 1.0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall4/RigidBody2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall4/StaticBody2D" index="0"]
 
 shape = SubResource( 1 )
 
@@ -170,33 +125,22 @@ texture = ExtResource( 5 )
 centered = false
 _sections_unfolded = [ "Offset" ]
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
 
-[node name="RigidBody2D" type="RigidBody2D" parent="Wall5" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Wall5" index="0"]
 
 position = Vector2( 31.8688, 32.1312 )
 input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 0
-mass = 1.0
+collision_layer = 17
+collision_mask = 31
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
+_sections_unfolded = [ "Collision" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall5/RigidBody2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall5/StaticBody2D" index="0"]
 
 shape = SubResource( 1 )
 
@@ -207,33 +151,22 @@ texture = ExtResource( 6 )
 centered = false
 _sections_unfolded = [ "Offset" ]
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
 
-[node name="RigidBody2D" type="RigidBody2D" parent="Wall6" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Wall6" index="0"]
 
 position = Vector2( 31.8688, 32.1312 )
 input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 0
-mass = 1.0
+collision_layer = 17
+collision_mask = 31
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
+_sections_unfolded = [ "Collision" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall6/RigidBody2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall6/StaticBody2D" index="0"]
 
 shape = SubResource( 1 )
 
@@ -244,33 +177,22 @@ texture = ExtResource( 7 )
 centered = false
 _sections_unfolded = [ "Offset" ]
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
 
-[node name="RigidBody2D" type="RigidBody2D" parent="Wall7" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Wall7" index="0"]
 
 position = Vector2( 31.8688, 32.1312 )
 input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 0
-mass = 1.0
+collision_layer = 17
+collision_mask = 31
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
+_sections_unfolded = [ "Collision" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall7/RigidBody2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall7/StaticBody2D" index="0"]
 
 shape = SubResource( 1 )
 
@@ -281,33 +203,22 @@ texture = ExtResource( 8 )
 centered = false
 _sections_unfolded = [ "Offset" ]
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
 
-[node name="RigidBody2D" type="RigidBody2D" parent="Wall8" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Wall8" index="0"]
 
 position = Vector2( 31.8688, 32.1312 )
 input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 0
-mass = 1.0
+collision_layer = 17
+collision_mask = 31
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
+_sections_unfolded = [ "Collision" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall8/RigidBody2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall8/StaticBody2D" index="0"]
 
 shape = SubResource( 1 )
 

@@ -1,43 +1,84 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Assets/Imagen/Player/player.png" type="Texture" id=1]
+[ext_resource path="res://Actors/Kin_Pj.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Imagen/Player/playerFront.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Imagen/Player/playerSide.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Imagen/Player/playerAttackDown.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Imagen/Player/playerUp.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Imagen/Player/playerDown.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Imagen/Player/playerAttackUp.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Imagen/Player/playerAttackSide.png" type="Texture" id=8]
 
-[sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
-extents = Vector2( 47.1674, 46.9841 )
-
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 1 ) ],
+"frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "Front",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "WalkSide",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "AttackDown",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "WalkUp",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "WalkDown",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "AttackUp",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "AttackSide",
+"speed": 5.0
 } ]
 
-[node name="Player" type="Node2D" index="0"]
+[sub_resource type="RectangleShape2D" id=2]
 
-[node name="Area2D" type="Area2D" parent="." index="0"]
+custom_solver_bias = 0.0
+extents = Vector2( 32.0828, 32.5481 )
 
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+[node name="Player" type="Node2D"]
+
+position = Vector2( 32.5685, 32.6614 )
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Kin_Pj" type="KinematicBody2D" parent="." index="0"]
+
+input_pickable = false
 collision_layer = 3
-collision_mask = 255
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Collision" ]
+collision_mask = 253
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Pickable", "collision" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+[node name="Ani_Pj" type="AnimatedSprite" parent="Kin_Pj" index="0"]
 
-shape = SubResource( 1 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Area2D" index="1"]
-
-frames = SubResource( 2 )
+position = Vector2( 31.3219, 31.6419 )
+frames = SubResource( 1 )
 animation = "Front"
+
+[node name="Coll_Pj" type="CollisionShape2D" parent="Kin_Pj" index="1"]
+
+position = Vector2( -0.732769, -0.478657 )
+shape = SubResource( 2 )
 
 
