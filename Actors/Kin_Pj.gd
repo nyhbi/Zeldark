@@ -9,16 +9,22 @@ var velocity = Vector2()
 var inventario = ["vacio", "vacio", "vacio", "vacio"]
 var vida
 var bombs
+var keys
 
 func _ready():
 	inventario = get_node("/root/global").inventario
 	vida = get_node("/root/global").vida
 	bombs = get_node("/root/global").bombs
+	keys = get_node("/root/global").keys
+	
 	pass
 
 func _physics_process(delta):
 	_movimientos(delta)
 	actualizar_HUD()
+	global.bombs = bombs
+	global.vida = vida
+	global.keys = keys
 
 	
 func _movimientos(delta):
@@ -64,7 +70,7 @@ func get_item(item):
 	if(slotVacio == null):
 		return false
 	
-	if(item == "Vida" && vida < 3):
+	if(item == "Vida" && vida < 6):
 		vida += 1
 		return true
 

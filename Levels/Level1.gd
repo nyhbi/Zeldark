@@ -9,7 +9,10 @@ func _ready():
 	# Initialization here
 	pass
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+func _process(delta):
+	pausa()
+
+func pausa():
+	if (Input.is_action_pressed("PLAYER_PAUSE")):
+		get_tree().paused = true
+		$Pausa.show()

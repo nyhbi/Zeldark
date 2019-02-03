@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Levels/Level1.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Imagen/Backgrounds/level1.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Assets/Items.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Exit.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Actors/Kin_Pj.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Pausa.tscn" type="PackedScene" id=7]
 
 [node name="Level1" type="Node2D" index="0"]
 
@@ -62,16 +63,20 @@ item = "Bomba"
 
 [node name="Vida" parent="Items" index="3" instance=ExtResource( 4 )]
 
-position = Vector2( 480.933, 607.413 )
+position = Vector2( 94.1953, 348.36 )
 
 [node name="Vida2" parent="Items" index="4" instance=ExtResource( 4 )]
 
-position = Vector2( 545.314, 607.413 )
+position = Vector2( 152.438, 348.36 )
 
 [node name="Exit" parent="." index="3" instance=ExtResource( 5 )]
 
 [node name="Kin_Pj" parent="." index="4" instance=ExtResource( 6 )]
 
 position = Vector2( 256, 576 )
+
+[node name="Pausa" parent="." index="5" instance=ExtResource( 7 )]
+
+visible = false
 
 

@@ -105,7 +105,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Kin_Pj" type="KinematicBody2D" index="0"]
+[node name="Kin_Pj" type="KinematicBody2D"]
 
 position = Vector2( 32.2228, 32.5716 )
 input_pickable = false
