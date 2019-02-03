@@ -1,6 +1,6 @@
 extends Node
 
 var inventario = ["vacio", "vacio", "vacio", "vacio"]
-var vida = 3
+var vida = 6
 var bombs = 0
 

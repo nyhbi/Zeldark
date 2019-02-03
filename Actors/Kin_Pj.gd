@@ -18,6 +18,7 @@ func _ready():
 
 func _physics_process(delta):
 	_movimientos(delta)
+	actualizar_HUD()
 
 	
 func _movimientos(delta):
@@ -38,23 +39,20 @@ func _movimientos(delta):
 	
 	
 func _actualizarAnimaciones(direction):
-	if direction.x == 0 and direction.y == 0:
-		$Ani_Pj.animation = "Front"
-		
+#	if direction.x == 0 and direction.y == 0:
+#		$Ani_Pj.animation = "Front"
 	
 	if direction.x > 0:
-		$Ani_Pj.flip_h = false
-		$Ani_Pj.animation = "WalkSide"
-		
+		$Spr_Pj/Ani_Pj.current_animation = "WalkRight"
+#
 	if direction.x < 0:
-		$Ani_Pj.flip_h = true
-		$Ani_Pj.animation = "WalkSide"
-		
+		$Spr_Pj/Ani_Pj.current_animation = "WalkLeft"
+#
 	if direction.y < 0:
-		$Ani_Pj.animation = "WalkUp"
-		
+		$Spr_Pj/Ani_Pj.current_animation = "WalkUp"
+#
 	if direction.y > 0:
-		$Ani_Pj.animation = "WalkDown"
+		$Spr_Pj/Ani_Pj.current_animation = "WalkDown"
 	
 func get_item(item):
 	var slotVacio = null
@@ -79,3 +77,6 @@ func get_item(item):
 	if(item != "Vida" && item != "Bomba"):
 		inventario[slotVacio] = item
 		return true
+		
+func actualizar_HUD():
+	$HUD/CanvasLayer/Vida.frame = vida
