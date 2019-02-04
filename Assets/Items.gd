@@ -6,6 +6,7 @@ func _ready():
 
 func _on_Items_body_entered(body):
 	if (body.get_collision_layer_bit(1)):
+		print("colisiona")
 		if(body.get_item(item)):
 			print("Inventario: " + str(body.inventario))
 			print("Vida: " + str(body.vida))

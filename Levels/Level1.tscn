@@ -69,6 +69,21 @@ position = Vector2( 94.1953, 348.36 )
 
 position = Vector2( 152.438, 348.36 )
 
+[node name="Espada" parent="Items" index="5" instance=ExtResource( 4 )]
+
+position = Vector2( 223.647, 96.6737 )
+item = "Espada"
+
+[node name="Llave" parent="Items" index="6" instance=ExtResource( 4 )]
+
+position = Vector2( 162.26, 99.1292 )
+item = "Llave"
+
+[node name="Botas" parent="Items" index="7" instance=ExtResource( 4 )]
+
+position = Vector2( 99.7383, 97.3504 )
+item = "Botas"
+
 [node name="Exit" parent="." index="3" instance=ExtResource( 5 )]
 
 [node name="Kin_Pj" parent="." index="4" instance=ExtResource( 6 )]

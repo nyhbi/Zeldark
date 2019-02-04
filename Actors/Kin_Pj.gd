@@ -6,7 +6,7 @@ var speed = 250
 var distance = Vector2()
 var velocity = Vector2()
 
-var inventario = ["vacio", "vacio", "vacio", "vacio"]
+var inventario = ["Vacio", "Vacio", "Vacio", "Vacio"]
 var vida
 var bombs
 var keys
@@ -25,6 +25,7 @@ func _physics_process(delta):
 	global.bombs = bombs
 	global.vida = vida
 	global.keys = keys
+#
 
 	
 func _movimientos(delta):
@@ -64,7 +65,7 @@ func get_item(item):
 	var slotVacio = null
 	
 	for i in range(4):
-		if(inventario[i] == "vacio"):
+		if(inventario[i] == "Vacio"):
 			slotVacio = i
 			
 	if(slotVacio == null):
@@ -86,3 +87,7 @@ func get_item(item):
 		
 func actualizar_HUD():
 	$HUD/CanvasLayer/Vida.frame = vida
+	$HUD/CanvasLayer/Equipo/ItemA.animation = global.equipoA
+	$HUD/CanvasLayer/Equipo/ItemB.animation = global.equipoB
+
+	

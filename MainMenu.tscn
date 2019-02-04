@@ -12,7 +12,7 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -129,9 +129,9 @@ flat = true
 align = 1
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
-[connection signal="pressed" from="ButtonNewGame" to="." method="_on_ButtonNewGame_pressed"]
-
 [connection signal="pressed" from="ButtonNewGame" to="." method="_on_Button3_pressed"]
+
+[connection signal="pressed" from="ButtonNewGame" to="." method="_on_ButtonNewGame_pressed"]
 
 [connection signal="pressed" from="ButtonContinue" to="." method="_on_ButtonContinue_pressed"]
 

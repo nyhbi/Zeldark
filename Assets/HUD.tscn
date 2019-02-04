@@ -1,0 +1,98 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Assets/Imagen/Inventario/vidaInventario0.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Imagen/Inventario/vidaInventario1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Imagen/Inventario/vidaInventario2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Imagen/Inventario/vidaInventario3.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Imagen/Inventario/vidaInventario4.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Imagen/Inventario/vidaInventario5.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Imagen/Inventario/vidaInventario6.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Imagen/Inventario/equipo.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Imagen/Inventario/espadaInventario.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Imagen/Inventario/bombaInventario.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Imagen/Inventario/botaInventario.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Imagen/Inventario/llaveInventario.png" type="Texture" id=12]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "Equipo",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Vida",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "Espada",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "Bomba",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "Botas",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "Llave",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "Vacio",
+"speed": 5.0
+} ]
+
+[node name="HUD" type="Node"]
+
+_sections_unfolded = [ "Pause" ]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
+
+layer = 0
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="Vida" type="AnimatedSprite" parent="CanvasLayer" index="0"]
+
+position = Vector2( 1183.54, 47.8818 )
+frames = SubResource( 1 )
+animation = "Vida"
+frame = 2
+
+[node name="Equipo" type="Sprite" parent="CanvasLayer" index="1"]
+
+position = Vector2( 134.153, 637.605 )
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Pause" ]
+
+[node name="ItemA" type="AnimatedSprite" parent="CanvasLayer/Equipo" index="0"]
+
+position = Vector2( 35.449, 7.9646 )
+frames = SubResource( 2 )
+animation = "Vacio"
+_sections_unfolded = [ "Pause" ]
+
+[node name="ItemB" type="AnimatedSprite" parent="CanvasLayer/Equipo" index="1"]
+
+position = Vector2( -62.8319, 7.66394 )
+frames = SubResource( 2 )
+animation = "Vacio"
+_sections_unfolded = [ "Pause" ]
+
+

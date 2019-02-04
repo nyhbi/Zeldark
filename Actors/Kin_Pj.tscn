@@ -1,14 +1,8 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Actors/Kin_Pj.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Imagen/Player/Sheets/minishWalk.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Imagen/Inventario/vidaInventario0.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Imagen/Inventario/vidaInventario1.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Imagen/Inventario/vidaInventario2.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Imagen/Inventario/vidaInventario3.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Imagen/Inventario/vidaInventario4.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Imagen/Inventario/vidaInventario5.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Imagen/Inventario/vidaInventario6.png" type="Texture" id=9]
+[ext_resource path="res://Assets/HUD.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -91,31 +85,16 @@ tracks/0/keys = {
 "values": [ 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58 ]
 }
 
-[sub_resource type="SpriteFrames" id=6]
-
-animations = [ {
-"frames": [  ],
-"loop": true,
-"name": "Equipo",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "Vida",
-"speed": 5.0
-} ]
-
 [node name="Kin_Pj" type="KinematicBody2D"]
 
-position = Vector2( 32.2228, 32.5716 )
 input_pickable = false
 collision_layer = 2
 collision_mask = 252
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Pickable", "collision" ]
+_sections_unfolded = [ "Collision", "Pickable", "Transform", "Z Index", "collision" ]
 __meta__ = {
-"_edit_lock_": true
+"_edit_group_": true
 }
 
 [node name="Coll_Pj" type="CollisionShape2D" parent="." index="0"]
@@ -145,21 +124,6 @@ anims/WalkRight = SubResource( 4 )
 anims/WalkUp = SubResource( 5 )
 blend_times = [  ]
 
-[node name="HUD" type="Node" parent="." index="2"]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="HUD" index="0"]
-
-layer = 1
-offset = Vector2( 0, 0 )
-rotation = 0.0
-scale = Vector2( 1, 1 )
-transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-
-[node name="Vida" type="AnimatedSprite" parent="HUD/CanvasLayer" index="0"]
-
-position = Vector2( 1183.54, 47.8818 )
-frames = SubResource( 6 )
-animation = "Vida"
-frame = 2
+[node name="HUD" parent="." index="2" instance=ExtResource( 3 )]
 
 

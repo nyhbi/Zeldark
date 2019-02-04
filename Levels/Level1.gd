@@ -12,7 +12,19 @@ func _ready():
 func _process(delta):
 	pausa()
 
+	
+	
+
 func pausa():
 	if (Input.is_action_pressed("PLAYER_PAUSE")):
+		desactiva_hud()
 		get_tree().paused = true
 		$Pausa.show()
+		global.pausa = true
+		
+		
+func desactiva_hud():
+		if global.pausa == false:
+			$Kin_Pj/HUD/CanvasLayer/Equipo/ItemA.animation = "Vacio"
+			$Kin_Pj/HUD/CanvasLayer/Equipo/ItemB.animation = "Vacio"
+	
