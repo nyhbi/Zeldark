@@ -65,6 +65,8 @@ margin_right = 752.0
 margin_bottom = 716.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+focus_neighbour_left = NodePath("../ButtonSlot1")
+focus_neighbour_right = NodePath("../ButtonSlot2")
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -79,7 +81,7 @@ group = null
 text = "Back"
 flat = true
 align = 1
-_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+_sections_unfolded = [ "Focus", "custom_colors", "custom_fonts" ]
 
 [node name="ButtonSlot1" type="Button" parent="." index="2"]
 
@@ -93,6 +95,8 @@ margin_right = 448.0
 margin_bottom = 588.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+focus_neighbour_right = NodePath("../ButtonSlot2")
+focus_neighbour_bottom = NodePath("../ButtonBack")
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -107,7 +111,7 @@ group = null
 text = "Slot 1"
 flat = true
 align = 1
-_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+_sections_unfolded = [ "Focus", "custom_colors", "custom_fonts" ]
 
 [node name="Save1" type="Label" parent="ButtonSlot1" index="0"]
 
@@ -149,6 +153,8 @@ margin_right = 1104.0
 margin_bottom = 589.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+focus_neighbour_left = NodePath("../ButtonSlot1")
+focus_neighbour_bottom = NodePath("../ButtonBack")
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -163,7 +169,7 @@ group = null
 text = "Slot 2"
 flat = true
 align = 1
-_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+_sections_unfolded = [ "Focus", "custom_colors", "custom_fonts" ]
 
 [node name="Save2" type="Label" parent="ButtonSlot2" index="0"]
 

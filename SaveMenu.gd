@@ -5,8 +5,7 @@ extends Control
 # var b = "textvar"
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
+	$ButtonBack.grab_focus()
 	pass
 
 #func _process(delta):

@@ -100,7 +100,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 40, 41, 42, 43, 44, 45, 46, 47, 48, 49 ]
+"values": [ 40, 41, 42, 43, 44, 45, 46, 47, 48, 40 ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -118,7 +118,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 59 ]
+"values": [ 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 56 ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -133,10 +133,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 22 ]
+"values": [ 70, 71, 72, 73, 74, 75, 76, 77, 78, 75 ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -151,14 +151,15 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 60, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69 ]
+"values": [ 60, 60, 61, 62, 63, 64, 65, 66, 67, 65 ]
 }
 
 [node name="Kin_Pj" type="KinematicBody2D" index="0"]
 
+position = Vector2( 640.735, 394.508 )
 input_pickable = false
 collision_layer = 2
 collision_mask = 252
@@ -181,7 +182,7 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 vframes = 16
 hframes = 5
-frame = 40
+frame = 66
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
 
 [node name="Ani_Pj" type="AnimationPlayer" parent="Spr_Pj" index="0"]

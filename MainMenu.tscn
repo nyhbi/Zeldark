@@ -12,7 +12,7 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="MainMenu" type="Control" index="0"]
+[node name="MainMenu" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -57,6 +57,7 @@ margin_right = 851.0
 margin_bottom = 353.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+focus_neighbour_bottom = NodePath("../ButtonContinue")
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -71,7 +72,7 @@ group = null
 text = "New Game"
 flat = true
 align = 1
-_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+_sections_unfolded = [ "Focus", "custom_colors", "custom_fonts" ]
 
 [node name="ButtonContinue" type="Button" parent="." index="2"]
 
@@ -85,6 +86,8 @@ margin_right = 827.0
 margin_bottom = 456.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+focus_neighbour_top = NodePath("../ButtonNewGame")
+focus_neighbour_bottom = NodePath("../ButtonExit")
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -99,7 +102,7 @@ group = null
 text = "Continue"
 flat = true
 align = 1
-_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+_sections_unfolded = [ "Focus", "custom_colors", "custom_fonts" ]
 
 [node name="ButtonExit" type="Button" parent="." index="3"]
 
@@ -113,6 +116,7 @@ margin_right = 814.0
 margin_bottom = 566.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+focus_neighbour_top = NodePath("../ButtonContinue")
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -127,11 +131,11 @@ group = null
 text = "Exit"
 flat = true
 align = 1
-_sections_unfolded = [ "custom_colors", "custom_fonts" ]
-
-[connection signal="pressed" from="ButtonNewGame" to="." method="_on_Button3_pressed"]
+_sections_unfolded = [ "Focus", "custom_colors", "custom_fonts" ]
 
 [connection signal="pressed" from="ButtonNewGame" to="." method="_on_ButtonNewGame_pressed"]
+
+[connection signal="pressed" from="ButtonNewGame" to="." method="_on_Button3_pressed"]
 
 [connection signal="pressed" from="ButtonContinue" to="." method="_on_ButtonContinue_pressed"]
 

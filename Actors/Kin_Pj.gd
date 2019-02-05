@@ -55,18 +55,31 @@ func _actualizarAnimaciones(direction):
 #	if direction.x == 0 and direction.y == 0:
 #		$Ani_Pj.animation = "Front"
 	
-	if direction.x > 0:
+	if direction.x > 0 and direction.y == 0:
 		$Spr_Pj/Ani_Pj.current_animation = "WalkRight"
 #
-	if direction.x < 0:
+	if direction.x < 0 and direction.y == 0:
 		$Spr_Pj/Ani_Pj.current_animation = "WalkLeft"
 #
-	if direction.y < 0:
+	if direction.y < 0 and direction.x == 0:
 		$Spr_Pj/Ani_Pj.current_animation = "WalkUp"
 #
-	if direction.y > 0:
+	if direction.y > 0 and direction.x == 0:
 		$Spr_Pj/Ani_Pj.current_animation = "WalkDown"
 	
+	#Direcciones diagonales
+	if direction.x < 0 and direction.y < 0:
+		$Spr_Pj/Ani_Pj.current_animation = "WalkUp"
+
+	if direction.x > 0 and direction.y < 0:
+		$Spr_Pj/Ani_Pj.current_animation = "WalkUp"
+#
+	if direction.x > 0 and direction.y > 0:
+		$Spr_Pj/Ani_Pj.current_animation = "WalkDown"
+#
+	if direction.x < 0 and direction.y > 0:
+		$Spr_Pj/Ani_Pj.current_animation = "WalkDown"
+#
 	if $Spr_Pj/Ani_Pj.current_animation != "":
 		dondeMira = $Spr_Pj/Ani_Pj.current_animation
 	
