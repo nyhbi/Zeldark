@@ -14,6 +14,7 @@ var keys
 var dondeMira = "WalkDown"
 
 func _ready():
+	#Sincroniza las variables del personaje con las variables globales
 	inventario = get_node("/root/global").inventario
 	vida = get_node("/root/global").vida
 	bombs = get_node("/root/global").bombs
@@ -52,18 +53,16 @@ func _movimientos(delta):
 	
 	
 func _actualizarAnimaciones(direction):
-#	if direction.x == 0 and direction.y == 0:
-#		$Ani_Pj.animation = "Front"
-	
+	#Actualiza las animaciones dependiendo de la accion realizada
 	if direction.x > 0 and direction.y == 0:
 		$Spr_Pj/Ani_Pj.current_animation = "WalkRight"
-#
+
 	if direction.x < 0 and direction.y == 0:
 		$Spr_Pj/Ani_Pj.current_animation = "WalkLeft"
-#
+
 	if direction.y < 0 and direction.x == 0:
 		$Spr_Pj/Ani_Pj.current_animation = "WalkUp"
-#
+
 	if direction.y > 0 and direction.x == 0:
 		$Spr_Pj/Ani_Pj.current_animation = "WalkDown"
 	
@@ -73,18 +72,20 @@ func _actualizarAnimaciones(direction):
 
 	if direction.x > 0 and direction.y < 0:
 		$Spr_Pj/Ani_Pj.current_animation = "WalkUp"
-#
+
 	if direction.x > 0 and direction.y > 0:
 		$Spr_Pj/Ani_Pj.current_animation = "WalkDown"
-#
+
 	if direction.x < 0 and direction.y > 0:
 		$Spr_Pj/Ani_Pj.current_animation = "WalkDown"
-#
+
+	#Guarda la ultima animacion realizada antes de detenerse
 	if $Spr_Pj/Ani_Pj.current_animation != "":
 		dondeMira = $Spr_Pj/Ani_Pj.current_animation
 	
 	
 func get_item(item):
+	#Acciones que realiza cuando colisiona con un objeto de la escena item
 	var slotVacio = null
 	
 	for i in range(4):
@@ -111,8 +112,7 @@ func get_item(item):
 		return true
 
 func accion_boton():
-	
-	
+	#Acciones que realiza el personaje dependiendo del item equipado y el boton presionado
 	if(Input.is_action_just_pressed("PLAYER_BUTTON_A")):
 		if global.equipoA == "Espada":
 			atacar()
@@ -134,7 +134,7 @@ func accion_boton():
 			pass
 			
 func atacar():
-	#animacion:
+	#Direccion de la animacion cuando ataca
 	if dondeMira == "WalkRight" or dondeMira == "FightRight":
 		$Spr_Pj/Ani_Pj.current_animation = "FightRight"
 #
@@ -146,21 +146,41 @@ func atacar():
 #
 	if dondeMira == "WalkDown" or dondeMira == "FightDown":
 		$Spr_Pj/Ani_Pj.current_animation = "FightDown"
-		pass
+
+	#Dirección del colisionador cuando ataca
+	if dondeMira == "WalkRight" or dondeMira == "FightRight":
+		$Coll_Atk.rotation_degrees = 180
+#
+	if dondeMira == "WalkLeft" or dondeMira == "FightLeft":
+		$Coll_Atk.rotation_degrees = 0
+#
+	if dondeMira == "WalkUp" or dondeMira == "FightUp":
+		$Coll_Atk.rotation_degrees = 90
+#
+	if dondeMira == "WalkDown" or dondeMira == "FightDown":
+		$Coll_Atk.rotation_degrees = 270
 
 func comprobar_accion():
+	#Comprueba si se está desarrollando una accion
 	if $Spr_Pj/Ani_Pj.current_animation == "FightRight":
+		$Coll_Atk.disabled = false
 		return false
 	if $Spr_Pj/Ani_Pj.current_animation == "FightLeft":
+		$Coll_Atk.disabled = false
 		return false
 	if $Spr_Pj/Ani_Pj.current_animation == "FightDown":
+		$Coll_Atk.disabled = false
 		return false
 	if $Spr_Pj/Ani_Pj.current_animation == "FightUp":
+		$Coll_Atk.disabled = false
 		return false
-	
+	else:
+		$Coll_Atk.disabled = true
+		
 	return true
 		
 func actualizar_HUD():
+	#Actualiza el HUD con el equipo actual y la vida actual
 	$HUD/CanvasLayer/Vida.frame = vida
 	$HUD/CanvasLayer/Equipo/ItemA.animation = global.equipoA
 	$HUD/CanvasLayer/Equipo/ItemB.animation = global.equipoB

@@ -9,7 +9,7 @@ var keys = 0
 var punteroA = 4
 var punteroB = 4
 
-var equipoA = "Vacio"
+var equipoA = "Espada"
 var equipoB = "Vacio"
 
 var pausa = false

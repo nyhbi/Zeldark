@@ -64,7 +64,7 @@ func movimiento_Menu():
 			else:
 				global.punteroB = indice
 			equipar()
-				
+
 	#MOVIMIENTO EN SECCION MENU
 	if(seccion[punteroMenu] == "Menu"):
 		#Qué boton selecciona dependiendo del indice
@@ -112,7 +112,7 @@ func graficar_Menu():
 	$Inventario/Equipo/ItemA.animation = global.equipoA
 	$Inventario/Equipo/ItemB.animation = global.equipoB
 	
-	#Posicion hadix
+	#Posicion del hadix
 	if(seccion[punteroMenu] == "Items"):
 		if(indice == 0):
 			$Inventario/HadaSelec.position.x = 918

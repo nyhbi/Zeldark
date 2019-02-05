@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 18.7622, 23.2598 )
+extents = Vector2( 16.4825, 23.2598 )
 
 [sub_resource type="Animation" id=2]
 
@@ -159,20 +159,17 @@ tracks/0/keys = {
 
 [node name="Kin_Pj" type="KinematicBody2D" index="0"]
 
-position = Vector2( 640.735, 394.508 )
+position = Vector2( 642.267, 384.387 )
 input_pickable = false
 collision_layer = 2
 collision_mask = 252
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Pickable", "Transform", "Z Index", "collision" ]
-__meta__ = {
-"_edit_group_": true
-}
+_sections_unfolded = [ "Collision", "Pickable", "Transform", "Visibility", "Z Index", "collision" ]
 
 [node name="Coll_Pj" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( 0.978943, -4.01148 )
+position = Vector2( 2.29663, 3.8941 )
 shape = SubResource( 1 )
 
 [node name="Spr_Pj" type="Sprite" parent="." index="1"]
@@ -182,7 +179,7 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 vframes = 16
 hframes = 5
-frame = 66
+frame = 30
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
 
 [node name="Ani_Pj" type="AnimationPlayer" parent="Spr_Pj" index="0"]
@@ -204,5 +201,14 @@ blend_times = [  ]
 _sections_unfolded = [ "Pause", "Playback Options" ]
 
 [node name="HUD" parent="." index="2" instance=ExtResource( 3 )]
+
+[node name="Coll_Atk" type="CollisionPolygon2D" parent="." index="3"]
+
+position = Vector2( 2, 0.999927 )
+rotation = 4.71239
+build_mode = 0
+polygon = PoolVector2Array( 4, -47, -17, -44, -39, -24, -45, 0, -39, 24, -17, 44, 4, 45 )
+disabled = true
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 
