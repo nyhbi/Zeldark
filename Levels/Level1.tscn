@@ -8,7 +8,7 @@
 [ext_resource path="res://Actors/Kin_Pj.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Pausa.tscn" type="PackedScene" id=7]
 
-[node name="Level1" type="Node2D" index="0"]
+[node name="Level1_Mountain" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -20,7 +20,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="TileMap" type="TileMap" parent="." index="1"]
+[node name="TileMapParedes" type="TileMap" parent="." index="1"]
 
 mode = 0
 tile_set = ExtResource( 3 )
