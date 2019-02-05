@@ -179,7 +179,7 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 vframes = 16
 hframes = 5
-frame = 30
+frame = 40
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
 
 [node name="Ani_Pj" type="AnimationPlayer" parent="Spr_Pj" index="0"]
