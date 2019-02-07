@@ -19,8 +19,7 @@ func _ready():
 	vida = get_node("/root/global").vida
 	bombs = get_node("/root/global").bombs
 	keys = get_node("/root/global").keys
-	
-	
+
 
 func _physics_process(delta):
 	_movimientos(delta)
@@ -28,9 +27,8 @@ func _physics_process(delta):
 	global.bombs = bombs
 	global.vida = vida
 	global.keys = keys
-#
 
-	
+
 func _movimientos(delta):
 	
 	direction.x = int(Input.is_action_pressed("PLAYER_RIGHT"))-int(Input.is_action_pressed("PLAYER_LEFT"))

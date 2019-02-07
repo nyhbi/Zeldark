@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Levels/Level1.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Imagen/Backgrounds/level1.png" type="Texture" id=2]
@@ -7,8 +7,9 @@
 [ext_resource path="res://Assets/Exit.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Actors/Kin_Pj.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Pausa.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Actors/Kin_Octorok.tscn" type="PackedScene" id=8]
 
-[node name="Level1_Mountain" type="Node2D"]
+[node name="Level1_Mountain" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -93,5 +94,9 @@ position = Vector2( 256, 576 )
 [node name="Pausa" parent="." index="5" instance=ExtResource( 7 )]
 
 visible = false
+
+[node name="Kin_Octorok" parent="." index="6" instance=ExtResource( 8 )]
+
+position = Vector2( 182.29, 239.426 )
 
 

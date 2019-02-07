@@ -1,18 +1,18 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Items.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Imagen/Items/llave.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Imagen/Items/vida.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Imagen/Items/espada.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Imagen/Items/vida.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Imagen/Items/bomba.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Imagen/Items/botas.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Imagen/Items/bomba.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Imagen/Items/llave.png" type="Texture" id=6]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "Llave",
+"name": "Vida",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
@@ -22,7 +22,7 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
-"name": "Vida",
+"name": "Bomba",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ) ],
@@ -32,7 +32,7 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
-"name": "Bomba",
+"name": "Llave",
 "speed": 5.0
 } ]
 _sections_unfolded = [ "Resource" ]
